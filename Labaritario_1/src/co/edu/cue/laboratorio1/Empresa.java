@@ -33,7 +33,7 @@ public class Empresa {
             if (producto1.getEstado()=="disponible"){
                 String desicion = JOptionPane.showInputDialog(producto1+"\n desea alquilar el producto? si=1 no=2");
                 if (desicion == "1"){
-                    String cantCompra = JOptionPane.showInputDialog("cantidades: "+producto1.getDisponibilidad())
+                    String cantCompra = JOptionPane.showInputDialog("cantidades: "+producto1.getDisponibilidad());
                 }
             }
 
