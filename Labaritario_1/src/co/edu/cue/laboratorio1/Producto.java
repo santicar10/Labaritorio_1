@@ -1,5 +1,8 @@
 package co.edu.cue.laboratorio1;
 
+import javax.swing.*;
+import java.util.Objects;
+
 public class Producto {
 
     String codigo;
@@ -14,6 +17,9 @@ public class Producto {
         this.disponibilidad = disponibilidad;
         this.estado = estado;
         this.precio = precio;
+    }
+
+    public Producto(String cantCompra) {
     }
 
     public String getCodigo() {
@@ -36,8 +42,9 @@ public class Producto {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(int disponibilidad) {
+    public int setDisponibilidad(int disponibilidad) {
         this.disponibilidad = disponibilidad;
+        return disponibilidad;
     }
 
     public String getEstado() {

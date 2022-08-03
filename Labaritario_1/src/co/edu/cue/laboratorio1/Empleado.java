@@ -5,14 +5,14 @@ public class Empleado {
     int codigo;
     String nombre;
     String correo;
-    int años;
+    int anios;
 
 
-    public Empleado(int codigo, String nombre, String correo, int años) {
+    public Empleado(int codigo, String nombre, String correo, int anios) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.correo = correo;
-        this.años = años;
+        this.anios = anios;
     }
 
     public int getCodigo() {
@@ -39,11 +39,12 @@ public class Empleado {
         this.correo = correo;
     }
 
-    public int getAños() {
-        return años;
+    public int getAnios() {
+        return anios;
     }
 
-    public void setAños(int años) {
-        this.años = años;
+    public void setAnios(int anios) {
+        this.anios = anios;
     }
+
 }

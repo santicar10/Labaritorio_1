@@ -2,12 +2,13 @@ package co.edu.cue.laboratorio1;
 
 
 import javax.swing.*;
+import java.util.Objects;
 
 public class Empresa {
     public static void main(String[] args) {
-        Empleado empleado1 = new Empleado(01,"juanito","juanito@gmail.com",5);
-        Empleado empleado2 = new Empleado(02,"ana","ana@gmail.com",10);
-        Empleado empleado3 = new Empleado(03,"Gerardo","gerardo@gmail.com",1);
+        Empleado empleado1 = new Empleado(1,"juanito","juanito@gmail.com",5);
+        Empleado empleado2 = new Empleado(2,"ana","ana@gmail.com",10);
+        Empleado empleado3 = new Empleado(3,"Gerardo","gerardo@gmail.com",1);
 
         Empleado empleado[]= new Empleado[3];
         empleado[0]=empleado1;
@@ -29,17 +30,19 @@ public class Empresa {
         JOptionPane.showMessageDialog(null,"producto 1: "+producto1.getCodigo()+" "+producto1.getNombre()+"\nproducto 2: "+producto2.getNombre()+" "+producto2.getCodigo()+"\nproducto 3: "+producto3.getNombre()+" "+producto3.getCodigo());
         String mensaje = JOptionPane.showInputDialog("ingrese el codigo del producto: ");
 
-        if (mensaje == "100"){
-            if (producto1.getEstado()=="disponible"){
-                String desicion = JOptionPane.showInputDialog(producto1+"\n desea alquilar el producto? si=1 no=2");
-                if (desicion == "1"){
-                    String cantCompra = JOptionPane.showInputDialog("cantidades: "+producto1.getDisponibilidad());
-                }
-            }
-
-
+        for (int i = 0;i < empleado.length; i++){
+            System.out.println(empleado[i].getNombre());
         }
 
-
+        if (Objects.equals(mensaje, "100")){
+            if (Objects.equals(producto1.getEstado(), "disponible")){
+                String desicion = JOptionPane.showInputDialog("\n desea alquilar el producto? si=1 no=2");
+                if (Objects.equals(desicion, "1")){
+                    int cantCompra = Integer.parseInt(JOptionPane.showInputDialog("cantidades: "+producto1.getDisponibilidad()));
+                    int resta = producto1.setDisponibilidad(producto1.getDisponibilidad()-cantCompra);
+                    System.out.println(producto1.getDisponibilidad());
+                }
+            }
+        }
     }
 }
