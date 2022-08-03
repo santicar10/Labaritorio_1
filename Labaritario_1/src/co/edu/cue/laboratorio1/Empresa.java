@@ -27,19 +27,18 @@ public class Empresa {
         producto[1]=producto2;
         producto[2]=producto3;
 
-
-        for (int i = 0;i < empleado.length; i++){
-            String atendedor = empleado[i].getNombre();
-        }
+        double valorDado = Math.floor(Math.random()*10+1);
+        System.out.println(valorDado);
 
         int x = 0;
+        int contador = 0;
 
        while (x == 0){
            String menu1 = JOptionPane.showInputDialog("1-cliente \n 2-empleado");
            switch (menu1){
                case "1":
                    String usuario = JOptionPane.showInputDialog("ingrese su nombre");
-                   if (usuario == "alberto"|| usuario == "juanita"){
+                   if (usuario.equals("alberto") || usuario.equals("juanita")){
                        String menu = JOptionPane.showInputDialog("elija una opcion \n 1- realisar una compra \n 2- consultar un producto \n 3- ver lista de productos");
                        switch (menu){
                            case "1":
@@ -53,22 +52,31 @@ public class Empresa {
                                                int dias = Integer.parseInt(JOptionPane.showInputDialog("cuantos dias desea alquilar el rpoducto?"));
                                                double precioProd = cantCompra*producto1.getPrecio()*dias;
                                                String user = JOptionPane.showInputDialog("usted es: "+usuario+"?");
-                                               if (user == "si"){
+                                               if (user.equals("si")){
                                                    String comprador = cliente1.getNombre();
                                                    Prestamo usuarioComp = new Prestamo(comprador);
                                                }else {
                                                    String comprador = cliente2.getNombre();
                                                    Prestamo usuarioComp = new Prestamo(comprador);
                                                }
-                                               Prestamo factura = new Prestamo(precioProd);
-                                               int resta = producto1.setDisponibilidad(producto1.getDisponibilidad()-cantCompra);
-                                               System.out.println(producto1.getDisponibilidad());
+                                               int numero = (int)(Math.random()*3+1);
+                                               String vendedor = empleado[numero].getNombre();
+                                               Prestamo factura = new Prestamo(precioProd,dias,vendedor);
+                                               if (producto1.getDisponibilidad()>0){
+                                                   int resta = producto1.setDisponibilidad(producto1.getDisponibilidad()-cantCompra);
+                                               }
+                                               else {
+                                                   producto1.setEstado("agotado");
+                                                   JOptionPane.showMessageDialog(null,"el producto no esta disponible", "Error!", JOptionPane.ERROR_MESSAGE);
+                                               }
+
                                            }
                                        }
                                }
                        }
                    } else{
                        JOptionPane.showMessageDialog(null,"Escriba nuevamente su nombre", "Error!", JOptionPane.ERROR_MESSAGE);
+                       x=0;
                    }
                case "2":
            }
