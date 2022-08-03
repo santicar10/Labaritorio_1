@@ -39,7 +39,7 @@ public class Empresa {
            switch (menu1){
                case "1":
                    String usuario = JOptionPane.showInputDialog("ingrese su nombre");
-                   if (usuario == "alberto"){
+                   if (usuario == "alberto"|| usuario == "juanita"){
                        String menu = JOptionPane.showInputDialog("elija una opcion \n 1- realisar una compra \n 2- consultar un producto \n 3- ver lista de productos");
                        switch (menu){
                            case "1":
@@ -52,22 +52,24 @@ public class Empresa {
                                                int cantCompra = Integer.parseInt(JOptionPane.showInputDialog("cuantas cantidades desea alquilar?"+"\ncantidades: "+producto1.getDisponibilidad()));
                                                int dias = Integer.parseInt(JOptionPane.showInputDialog("cuantos dias desea alquilar el rpoducto?"));
                                                double precioProd = cantCompra*producto1.getPrecio()*dias;
-
+                                               String user = JOptionPane.showInputDialog("usted es: "+usuario+"?");
+                                               if (user == "si"){
+                                                   String comprador = cliente1.getNombre();
+                                                   Prestamo usuarioComp = new Prestamo(comprador);
+                                               }else {
+                                                   String comprador = cliente2.getNombre();
+                                                   Prestamo usuarioComp = new Prestamo(comprador);
+                                               }
                                                Prestamo factura = new Prestamo(precioProd);
                                                int resta = producto1.setDisponibilidad(producto1.getDisponibilidad()-cantCompra);
                                                System.out.println(producto1.getDisponibilidad());
-
                                            }
                                        }
                                }
-
                        }
                    } else{
                        JOptionPane.showMessageDialog(null,"Escriba nuevamente su nombre", "Error!", JOptionPane.ERROR_MESSAGE);
                    }
-
-
-
                case "2":
            }
            String seguir = JOptionPane.showInputDialog("desea seguir comprando ?");

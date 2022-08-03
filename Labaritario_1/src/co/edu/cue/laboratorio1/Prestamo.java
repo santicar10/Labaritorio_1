@@ -6,4 +6,6 @@ public class Prestamo {
     }
 
 
+    public Prestamo(String comprador) {
+    }
 }
