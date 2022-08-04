@@ -48,7 +48,7 @@ public class Empresa {
                case "1":
                    String usuario = JOptionPane.showInputDialog("ingrese su nombre");
                    if (usuario.equals("alberto") || usuario.equals("juanita")){
-                       String menu = JOptionPane.showInputDialog("elija una opcion \n 1- realisar una compra \n 2- consultar un producto");
+                       String menu = JOptionPane.showInputDialog("elija una opcion \n 1- realizar una compra \n 2- consultar un producto");
                        switch (menu){
                            case "1":
                                String mensaje = JOptionPane.showInputDialog(mensajeMuetra);
@@ -98,7 +98,7 @@ public class Empresa {
                                        break;
                                    case "101":
                                        if (Objects.equals(producto2.getEstado(), "disponible")){
-                                           String desicion = JOptionPane.showInputDialog("detalles del rpoducto: "+"\ndsiponibilidad: "+producto2.getEstado()+"\n"+"cantidad: "+producto2.getDisponibilidad()+"\n"+"precio: "+producto2.getPrecio()+"\n*RECUERDE QUE EL PRECIO ES POR DIAS"+"\n desea alquilar el producto?");
+                                           String desicion = JOptionPane.showInputDialog("detalles del producto: "+"\ndsiponibilidad: "+producto2.getEstado()+"\n"+"cantidad: "+producto2.getDisponibilidad()+"\n"+"precio: "+producto2.getPrecio()+"\n*RECUERDE QUE EL PRECIO ES POR DIAS"+"\n desea alquilar el producto?");
                                            if (Objects.equals(desicion, "si")){
                                                int cantCompra = Integer.parseInt(JOptionPane.showInputDialog("cuantas cantidades desea alquilar?"+"\ncantidades: "+producto2.getDisponibilidad()));
                                                if (producto2.getDisponibilidad()>0){
@@ -143,7 +143,7 @@ public class Empresa {
                                            if (Objects.equals(desicion, "si")){
                                                int cantCompra = Integer.parseInt(JOptionPane.showInputDialog("cuantas cantidades desea alquilar?"+"\ncantidades: "+producto3.getDisponibilidad()));
                                                if (producto3.getDisponibilidad()>0){
-                                                   int dias = Integer.parseInt(JOptionPane.showInputDialog("cuantos dias desea alquilar el rpoducto?"));
+                                                   int dias = Integer.parseInt(JOptionPane.showInputDialog("cuantos dias desea alquilar el producto?"));
                                                    double precioProd = 0;
                                                    if (dias <= dias){
                                                        precioProd = cantCompra*producto3.getPrecio()*dias;
@@ -185,13 +185,13 @@ public class Empresa {
                                String consulta = JOptionPane.showInputDialog("que producto desea conoser\n"+mensajeMuetra);
                                switch (consulta){
                                    case "100":
-                                       JOptionPane.showMessageDialog(null,"detalles del rpoducto: "+"\ndsiponibilidad: "+producto1.getEstado()+"\n"+"cantidad: "+producto1.getDisponibilidad()+"\n"+"precio: "+producto1.getPrecio()+"\n cantidades de veces prestado: "+cont1+"\n cantidades alquiladas: "+contador1);
+                                       JOptionPane.showMessageDialog(null,"detalles del producto: "+"\ndsiponibilidad: "+producto1.getEstado()+"\n"+"cantidad: "+producto1.getDisponibilidad()+"\n"+"precio: "+producto1.getPrecio()+"\n cantidades de veces prestado: "+cont1+"\n cantidades alquiladas: "+contador1);
                                        break;
                                    case "101":
-                                       JOptionPane.showMessageDialog(null,"detalles del rpoducto: "+"\ndsiponibilidad: "+producto2.getEstado()+"\n"+"cantidad: "+producto2.getDisponibilidad()+"\n"+"precio: "+producto2.getPrecio()+"\n cantidades de veces prestado: "+cont2+"\n cantidades alquiladas: "+contador2);
+                                       JOptionPane.showMessageDialog(null,"detalles del producto: "+"\ndsiponibilidad: "+producto2.getEstado()+"\n"+"cantidad: "+producto2.getDisponibilidad()+"\n"+"precio: "+producto2.getPrecio()+"\n cantidades de veces prestado: "+cont2+"\n cantidades alquiladas: "+contador2);
                                        break;
                                    case "102":
-                                       JOptionPane.showMessageDialog(null,"detalles del rpoducto: "+"\ndsiponibilidad: "+producto3.getEstado()+"\n"+"cantidad: "+producto3.getDisponibilidad()+"\n"+"precio: "+producto3.getPrecio()+"\n cantidades de veces prestado: "+cont3+"\n cantidades alquiladas: "+contador3);
+                                       JOptionPane.showMessageDialog(null,"detalles del producto: "+"\ndsiponibilidad: "+producto3.getEstado()+"\n"+"cantidad: "+producto3.getDisponibilidad()+"\n"+"precio: "+producto3.getPrecio()+"\n cantidades de veces prestado: "+cont3+"\n cantidades alquiladas: "+contador3);
                                        break;
                                    default:break;
                                }
